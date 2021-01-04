@@ -23,14 +23,17 @@ private FirebaseAuth mAuth;
         setButtonNextVisible(false);
 
         addSlide(new FragmentSlide.Builder()
+                .background(android.R.color.holo_blue_dark)
                 .fragment(R.layout.intro_1)
                 .build());
 
         addSlide(new FragmentSlide.Builder()
+                .background(android.R.color.holo_blue_dark)
                 .fragment(R.layout.intro_2)
                 .build());
 
         addSlide(new FragmentSlide.Builder()
+                .background(android.R.color.holo_blue_dark)
                 .fragment(R.layout.intro_conta)
                 .canGoForward(false)
                 .build());

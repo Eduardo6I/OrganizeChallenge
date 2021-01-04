@@ -11,6 +11,7 @@
     <color name="colorPrimaryDarkTorneio">#036BBD</color>
     <color name="colorAccentTorneio">#00BCD4</color>
 
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
