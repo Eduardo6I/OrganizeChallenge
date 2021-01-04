@@ -2,6 +2,7 @@ package com.example.organizechallenge.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -76,6 +77,8 @@ public class AddTorneioActivity extends AppCompatActivity  implements AdapterVie
             torneio.setOrdem(itemOrdem);
             torneio.setEstilo(itemEstilo);
             torneio.salvar(data);
+
+            startActivity(new Intent(getApplicationContext(), AddEquipeActivity.class));
 
             finish();
         }
