@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "866328821243",
+    "firebase_url": "https://organizechallenge-82372.firebaseio.com",
+    "project_id": "organizechallenge-82372",
+    "storage_bucket": "organizechallenge-82372.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866328821243:android:3f12b42b20ea867cc21f5e",
+        "android_client_info": {
+          "package_name": "com.example.organizechallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866328821243-amqvntsgsqlljqllnrjf1hvvklugg3vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.organizechallenge",
+            "certificate_hash": "262252d675d0f780bf04289f57466f2913bdffd9"
+          }
+        },
+        {
+          "client_id": "866328821243-j4c426lhdup413ph3cr4bq0jithtjj6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuQEMzVUn23YClPgWqj-WYtx2BLjjyZPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866328821243-j4c426lhdup413ph3cr4bq0jithtjj6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
