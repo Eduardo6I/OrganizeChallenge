@@ -73,9 +73,8 @@ public class AddEquipeActivity extends AppCompatActivity {
             equipe = new Equipe();
             String nome = campoNomeEquipe.getText().toString();
             equipe.setNome(nome);
-            equipe.salvarEquipe(nome);
+            equipe.salvar(nome);
 
-            finish();
         }
     }
 
@@ -85,7 +84,7 @@ public class AddEquipeActivity extends AppCompatActivity {
         if (!textoNomeEquipe.isEmpty()) {
             return  true;
         } else {
-            Toast.makeText(this, "Por favor preencha o Campo Nome",
+            Toast.makeText(this, "Por favor preencha o Campo Equipe",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -131,9 +130,9 @@ public class AddEquipeActivity extends AppCompatActivity {
                 String emailUsuario = mAuth.getCurrentUser().getEmail();
                 String idUsuario = Base64Custom.codificarBase64(emailUsuario);
 
-                equipeRef = firebaseRef.child("torneios")
+                equipeRef = firebaseRef.child("equipes")
                         .child(idUsuario)
-                        .child("equipe");
+                        .child("torneio");
 
                 equipeRef.child(equipe.getKey()).removeValue();
                 adapterEquipe.notifyItemRemoved(position);
@@ -159,9 +158,9 @@ public class AddEquipeActivity extends AppCompatActivity {
         String emailUsuario = mAuth.getCurrentUser().getEmail();
         String idUsuario = Base64Custom.codificarBase64(emailUsuario);
 
-        equipeRef = firebaseRef.child("torneios")
+        equipeRef = firebaseRef.child("equipes")
                 .child(idUsuario)
-                .child("equipe");
+                .child("torneio");
         valueEventListenerEquipe = equipeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

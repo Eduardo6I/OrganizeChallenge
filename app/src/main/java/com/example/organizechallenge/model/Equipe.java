@@ -13,22 +13,17 @@ public class Equipe {
     public Equipe() {
 
     }
-    public void salvarEquipe(String dataEscolhida){
+    public void salvar(String nome){
         FirebaseAuth mAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
         String idUsuario = Base64Custom.codificarBase64(mAuth.getCurrentUser().getEmail());
-        String mesAno = DateUtil.mesAnoDataEscolhida(dataEscolhida);
 
         DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
-        firebase.child("torneios")
+        firebase.child("equipes")
                 .child(idUsuario)
-                .child(mesAno)
-                .push()
-                .child("equipe")
+                .child("torneio")
                 .push()
                 .setValue(this);
     }
-
-
 
     public String getKey() {
         return key;
