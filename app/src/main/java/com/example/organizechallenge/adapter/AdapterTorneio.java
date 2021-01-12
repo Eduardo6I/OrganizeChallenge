@@ -54,7 +54,6 @@ public class AdapterTorneio extends RecyclerView.Adapter<AdapterTorneio.MyViewHo
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             titulo = itemView.findViewById(R.id.textAdapterTitulo);
             data = itemView.findViewById(R.id.textAdapterData);
             estilo = itemView.findViewById(R.id.textAdapterEstilo);

@@ -33,10 +33,10 @@ public class AdapterEquipe extends RecyclerView.Adapter<AdapterEquipe.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Equipe equipe = equipes.get(position);
-
-        holder.nome.setText(equipe.getNome());
-        holder.nome.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
-
+        if(equipe.getNome() != null){
+            holder.nome.setText(equipe.getNome());
+            holder.nome.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+        }
     }
 
 
@@ -51,8 +51,8 @@ public class AdapterEquipe extends RecyclerView.Adapter<AdapterEquipe.MyViewHold
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             nome = itemView.findViewById(R.id.textAdapterNomeEquipe);
+
         }
 
     }

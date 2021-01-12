@@ -34,12 +34,10 @@ import java.util.List;
 public class AddEquipeActivity extends AppCompatActivity {
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
     private FirebaseAuth mAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
-    private DatabaseReference usuarioRef;
     private DatabaseReference equipeRef;
 
     private EditText campoNomeEquipe;
     private ValueEventListener valueEventListenerEquipe;
-    private ValueEventListener valueEventListenerUsuario;
 
     private RecyclerView recyclerViewEquipe;
     private AdapterEquipe adapterEquipe;
@@ -70,10 +68,15 @@ public class AddEquipeActivity extends AppCompatActivity {
     public void salvarEquipe(View view) {
         if (validarCampos()) {
 
-            equipe = new Equipe();
-            String nome = campoNomeEquipe.getText().toString();
-            equipe.setNome(nome);
-            equipe.salvar(nome);
+            String nomeEquipe = campoNomeEquipe.getText().toString();
+            if(!nomeEquipe.isEmpty()){
+                Equipe equipe = new Equipe();
+                equipe.setNome(nomeEquipe);
+                equipe.salvar(nomeEquipe);
+                startActivity(new Intent(getApplicationContext(), AddEquipeActivity.class));
+
+                finish();
+            }
 
         }
     }
@@ -190,7 +193,6 @@ public class AddEquipeActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        usuarioRef.removeEventListener(valueEventListenerUsuario);
         equipeRef.removeEventListener(valueEventListenerEquipe);
     }
 }
